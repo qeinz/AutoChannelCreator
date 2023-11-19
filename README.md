@@ -32,3 +32,7 @@ Die Konfigurationsdatei enthält verschiedene Parameter, die für den Betrieb de
 - **channelid_entry**: Die Channel-ID, in welche die Query zurück Joinen soll.
 - **channel_admin**: Die Channel-ID der Admin Gruppe.
 
+## Endprodukt:
+![NVIDIA_Share_iDWae0thZM](https://github.com/qeinz/AutoChannelCreator/assets/66924611/fec995ae-a023-49b2-b747-39f0b84ec035)
+
+
