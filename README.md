@@ -18,3 +18,17 @@ Die Konfigurationsdatei enthält verschiedene Parameter, die für den Betrieb de
   "channelid_entry": "your_entry_channel_id",
   "channel_admin": "your_channel_admin_id"
 }
+```
+
+## Erklärung der Einträge:
+
+- **serverip**: Die IP-Adresse des Teamspeak 3 Servers.
+- **query_port**: Der Query-Port des Teamspeak 3 Servers.
+- **nickname**: Der gewünschte Nickname des Bots.
+- **query_login**: Der Benutzername für die Query-Verbindung.
+- **query_password**: Das Passwort für die Query-Verbindung.
+- **channel_id_creator**: Die Channel-ID, in der der AutoChannelCreator neue Kanäle erstellt.
+- **channelid_placer**: Die Channel-ID, in der der AutoChannelCreator neue Kanäle platziert.
+- **channelid_entry**: Die Channel-ID, in der neue Benutzer standardmäßig platziert werden.
+- **channel_admin**: Die Channel-ID des Administrators.
+
