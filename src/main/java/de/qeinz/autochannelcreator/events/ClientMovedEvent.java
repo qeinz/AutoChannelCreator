@@ -23,7 +23,7 @@ public class ClientMovedEvent extends TS3EventAdapter {
         //Channel zum erstellen eines eigenen Channels
         if (event.getTargetChannelId() == Main.channelCreator_ID)
             ChannelCreatorService.createOwnChannel(client, Main.channelCreator_Placer,
-                    Main.entryChannel, Main.channelAdmin);
+                    Main.channelAdmin, Main.entryChannel);
 
     }
 }

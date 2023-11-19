@@ -87,10 +87,10 @@ public class ConfigManager {
     }
 
     public String getEntryChannel() {
-        return channelIdPlacer;
+        return entryChannel;
     }
 
     public String getChannelAdmin() {
-        return channelIdPlacer;
+        return channelAdmin;
     }
 }
