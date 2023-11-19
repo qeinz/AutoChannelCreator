@@ -3,15 +3,8 @@ package de.qeinz.autochannelcreator.utils;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
-/**
- * JavaDoc this file!
- * Created: 19.11.2023
- *
- * @author Nikk (dominik@minesort.de)
- */
 public class ConfigManager {
 
     private String serverIp;
@@ -29,24 +22,35 @@ public class ConfigManager {
     }
 
     private void readConfig() {
-        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.json")) {
-            JsonReader reader = Json.createReader(inputStream);
-            JsonObject jsonObject = reader.readObject();
+        try {
+            String currentWorkingDirectory = System.getProperty("user.dir");
+            String configFilePath = currentWorkingDirectory + File.separator + "config.json";
 
-            serverIp = getStringOrDefault(jsonObject, "serverip", "");
-            queryPort = getStringOrDefault(jsonObject, "query_port", "");
-            nickname = getStringOrDefault(jsonObject, "nickname", "");
-            username = getStringOrDefault(jsonObject, "query_login", "");
-            password = getStringOrDefault(jsonObject, "query_password", "");
-            channelIdCreator = getStringOrDefault(jsonObject, "channel_id_creator", "");
-            channelIdPlacer = getStringOrDefault(jsonObject, "channelid_placer", "");
-            entryChannel = getStringOrDefault(jsonObject, "channelid_entry", "");
-            channelAdmin = getStringOrDefault(jsonObject, "channel_admin", "");
+            try (InputStream inputStream = new FileInputStream(configFilePath)) {
+                JsonReader reader = Json.createReader(inputStream);
+                if (reader != null) {
+                    JsonObject jsonObject = reader.readObject();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (NullPointerException e) {
-            System.err.println("Fehler beim Lesen der Konfigurationsdatei. Ein oder mehrere Werte fehlen.");
+                    serverIp = getStringOrDefault(jsonObject, "serverip", "");
+                    queryPort = getStringOrDefault(jsonObject, "query_port", "");
+                    nickname = getStringOrDefault(jsonObject, "nickname", "");
+                    username = getStringOrDefault(jsonObject, "query_login", "");
+                    password = getStringOrDefault(jsonObject, "query_password", "");
+                    channelIdCreator = getStringOrDefault(jsonObject, "channel_id_creator", "");
+                    channelIdPlacer = getStringOrDefault(jsonObject, "channelid_placer", "");
+                    entryChannel = getStringOrDefault(jsonObject, "channelid_entry", "");
+                    channelAdmin = getStringOrDefault(jsonObject, "channel_admin", "");
+                } else {
+                    System.err.println("Error: Could not create JsonReader. InputStream is null.");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (NullPointerException e) {
+                System.err.println("Fehler beim Lesen der Konfigurationsdatei. Ein oder mehrere Werte fehlen.");
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            System.err.println("Fehler beim Konstruieren des Dateipfads.");
             e.printStackTrace();
         }
     }

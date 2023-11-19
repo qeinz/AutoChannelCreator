@@ -19,19 +19,22 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
                             <mainClass>de.qeinz.autochannelcreator.main.Main</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.github.theholywaffle/teamspeak3-api -->
