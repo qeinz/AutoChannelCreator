@@ -29,6 +29,6 @@ Die Konfigurationsdatei enthält verschiedene Parameter, die für den Betrieb de
 - **query_password**: Das Passwort für die Query-Verbindung.
 - **channel_id_creator**: Die Channel-ID, in der der AutoChannelCreator neue Kanäle erstellt.
 - **channelid_placer**: Die Channel-ID, in der der AutoChannelCreator neue Kanäle platziert.
-- **channelid_entry**: Die Channel-ID, in der neue Benutzer standardmäßig platziert werden.
-- **channel_admin**: Die Channel-ID des Administrators.
+- **channelid_entry**: Die Channel-ID, in welche die Query zurück Joinen soll.
+- **channel_admin**: Die Channel-ID der Admin Gruppe.
 
