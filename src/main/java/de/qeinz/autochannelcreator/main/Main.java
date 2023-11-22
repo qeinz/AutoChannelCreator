@@ -38,7 +38,7 @@ public class Main {
 
         api = query.getApi();
         api.login(configManager.getUsername(), configManager.getPassword());
-        api.selectVirtualServerById(1);
+        api.selectVirtualServerById(Integer.parseInt(configManager.getVirtualserverID()));
 
         try {
             api.setNickname(configManager.getNickname());

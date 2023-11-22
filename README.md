@@ -16,7 +16,8 @@ Die Konfigurationsdatei enthält verschiedene Parameter, die für den Betrieb de
   "channel_id_creator": "your_channel_id_creator",
   "channelid_placer": "your_channel_id_placer",
   "channelid_entry": "your_entry_channel_id",
-  "channel_admin": "your_channel_admin_id"
+  "channel_admin": "your_channel_admin_id",
+  "virtual_serverid": "your_virtual_server_id"
 }
 ```
 
@@ -31,7 +32,7 @@ Die Konfigurationsdatei enthält verschiedene Parameter, die für den Betrieb de
 - **channelid_placer**: Die Channel-ID, in der der AutoChannelCreator neue Kanäle platziert.
 - **channelid_entry**: Die Channel-ID, in welche die Query zurück Joinen soll.
 - **channel_admin**: Die Channel-ID der Admin Gruppe.
-
+- **virtual_serverid**: Die ID deines Virtuellen TS3 Servers (1,2,3..).
 ## Endprodukt:
 ![NVIDIA_Share_iDWae0thZM](https://github.com/qeinz/AutoChannelCreator/assets/66924611/fec995ae-a023-49b2-b747-39f0b84ec035)
 

@@ -16,6 +16,7 @@ public class ConfigManager {
     private String channelIdPlacer;
     private String entryChannel;
     private String channelAdmin;
+    private String virutalServerID;
 
     public ConfigManager() {
         readConfig();
@@ -40,6 +41,8 @@ public class ConfigManager {
                     channelIdPlacer = getStringOrDefault(jsonObject, "channelid_placer", "");
                     entryChannel = getStringOrDefault(jsonObject, "channelid_entry", "");
                     channelAdmin = getStringOrDefault(jsonObject, "channel_admin", "");
+                    virutalServerID = getStringOrDefault(jsonObject, "virtual_serverid", "");
+
                 } else {
                     System.err.println("Error: Could not create JsonReader. InputStream is null.");
                 }
@@ -96,5 +99,9 @@ public class ConfigManager {
 
     public String getChannelAdmin() {
         return channelAdmin;
+    }
+
+    public String getVirtualserverID() {
+        return virutalServerID;
     }
 }
